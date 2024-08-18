@@ -1,0 +1,7 @@
+{
+    "input_dir": "./resources/input_dir",
+    "descaled_dir": "./resources/descaled_dir",
+    "trimap_dir": "./resources/trimap_dir",
+    "alpha_matte_dir": "./resources/alpha_matte_dir",
+    "output_dir": "./resources/output_dir"
+}
