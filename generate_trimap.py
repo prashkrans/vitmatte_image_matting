@@ -20,12 +20,16 @@ def generate_trimap(input_dir, descaled_dir, trimap_dir):
         # Read the current image
         img = cv2.imread(image_path)
         img = descale_image(img)
+
+        # Get the original dimensions of the image
+        h, w = img.shape[:2]
+
         cv2.imwrite(descaled_img_path, img, [cv2.IMWRITE_PNG_COMPRESSION, 0]) # 0 is lossless
 
 
         # Create a window to display the image
         cv2.namedWindow("Paint Image", cv2.WINDOW_NORMAL)
-        cv2.resizeWindow("Paint Image", 1280, 1280)
+        cv2.resizeWindow("Paint Image", w, h) # Using w, h of the descaled image which should ideally fit on the screen
         # cv2.imshow("Paint Image", img)
         cv2.imshow("Paint Image", img)
 
