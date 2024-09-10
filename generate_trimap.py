@@ -26,10 +26,49 @@ def generate_trimap(input_dir, descaled_dir, trimap_dir):
 
         cv2.imwrite(descaled_img_path, img, [cv2.IMWRITE_PNG_COMPRESSION, 0]) # 0 is lossless
 
+        from PIL import ImageGrab
+        import numpy as np
+
+        # Capture the screen
+        screen = ImageGrab.grab()
+
+        # Convert the screen capture to a NumPy array
+        screen_np = np.array(screen)
+
+        # Get the dimensions
+        screen_height, screen_width, _ = screen_np.shape
+
+        max_screen_side_px = max(screen_width, screen_height)
+        # FHD = 1920 x 1080 | HD2 = 1366 x 768 | HD = 1280 x 720
+        descale_preview_constant = 1280
+        if max_screen_side_px == 1920:
+            descale_preview_constant = 960
+        elif max_screen_side_px == 1366:
+            descale_preview_constant = 768
+        elif max_screen_side_px == 1280:
+            descale_preview_constant = 720
+        
+        max_side_px = max(w, h)
+        descale_preview_factor = max_side_px/descale_preview_constant
+        w_pre = int(min(w, w/descale_preview_factor))
+        h_pre = int(min(h, h/descale_preview_factor))
+
+        print(f'screen_width: {screen_width}')
+        print(f'screen_height: {screen_height}')
+
+        print(f'descale_preview_constant: {descale_preview_constant}')
+
+        print(f'image_width: {w}')
+        print(f'image_height: {h}')
+
+        print(f'descale_preview_factor: {descale_preview_factor}')
+        print(f'preview_image_width: {w_pre}')
+        print(f'preview_image_height: {h_pre}')
 
         # Create a window to display the image
         cv2.namedWindow("Paint Image", cv2.WINDOW_NORMAL)
-        cv2.resizeWindow("Paint Image", w, h) # Using w, h of the descaled image which should ideally fit on the screen
+        # cv2.resizeWindow("Paint Image", w, h) # Using w, h of the descaled image which should ideally fit on the screen
+        cv2.resizeWindow("Paint Image", w_pre, h_pre) # Using w, h of the descaled image which should ideally fit on the screen
         # cv2.imshow("Paint Image", img)
         cv2.imshow("Paint Image", img)
 
