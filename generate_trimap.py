@@ -42,11 +42,11 @@ def generate_trimap(input_dir, descaled_dir, trimap_dir):
         # FHD = 1920 x 1080 | HD2 = 1366 x 768 | HD = 1280 x 720
         descale_preview_constant = 1280
         if max_screen_side_px == 1920:
-            descale_preview_constant = 960
+            descale_preview_constant = 768  # 960
         elif max_screen_side_px == 1366:
-            descale_preview_constant = 768
+            descale_preview_constant = 720  # 768
         elif max_screen_side_px == 1280:
-            descale_preview_constant = 720
+            descale_preview_constant = 640  # 720
         
         max_side_px = max(w, h)
         descale_preview_factor = max_side_px/descale_preview_constant
