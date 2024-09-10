@@ -78,15 +78,15 @@ def generate_trimap(input_dir, descaled_dir, trimap_dir):
         max_val = max(height, width)
 
         if  max_val > 4000:
-            brush_size = 200  # You can adjust the size of the brush
+            brush_size = 250  # You can adjust the size of the brush
         elif max_val > 3000:
-            brush_size = 120
+            brush_size = 150
         elif max_val > 2000:
-            brush_size = 75
+            brush_size = 100
         elif max_val > 1000:
-            brush_size = 30
+            brush_size = 50
         else:
-            brush_size = 20
+            brush_size = 30
 
         color = (255, 255, 255)  # White color
 
