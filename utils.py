@@ -26,3 +26,20 @@ os.makedirs(descaled_dir, exist_ok=True)
 os.makedirs(trimap_dir, exist_ok=True)
 os.makedirs(alpha_matte_dir, exist_ok=True)
 os.makedirs(output_dir, exist_ok=True)
+
+
+
+
+def is_image_file(filename):
+    image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.bmp'}
+    return os.path.splitext(filename)[1].lower() in image_extensions
+
+def clear_image_files(src_dir):
+    for filename in os.listdir(src_dir):
+        if is_image_file(filename):
+            file_path = os.path.join(src_dir, filename)
+            try:
+                os.unlink(file_path)
+                print(f'Deleted: {file_path}')
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')

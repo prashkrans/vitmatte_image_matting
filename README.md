@@ -14,8 +14,9 @@ https://github.com/user-attachments/assets/f0a024ac-c02c-47a8-b3d4-e952edd077ee
 ### Prerequisites:
 - Python 3.11 (Might work with lower/higher versions as well)
 - Hugging Face Hub
-- NVIDIA CUDA for faster processing
-- I have not tested for cpu only, may or may not work. Although, if it works would be awfully slow.
+- tkinter (Only for linux): `sudo apt install python3-tk`
+- I have not tested for NVIDIA cuda, may be significantly faster.
+- Critical Resolution kept as 1536 (2048 works but is painfully slow and > 2048 gives an error as it requires more RAM)
 
 ### Setup:
 1. Clone the repo and move to the root dir.
@@ -30,14 +31,15 @@ source env_vit/bin/activate
 ```
 3. Install the requirements (Might take some time).   
 ```
+sudo apt install python3-tk
 pip install -r requirements.txt
 ```
 
 ### Usage:
-1. Put a single or multiple images in the resources/input_dir
-2. Run `python3 main.py`
-3. Input `y` if creating new trimap(s) or `n` if using already created trimap(s) by putting them in the `trimap_dir` but as `filename_trimap.png`
-4. Wait for the processing to complete after which two results would be obtained: a. image with background removed and b. the alpha matte (Black and White Contour). These would also be saved at `output_dir` and `alpha_matte_dir` respectively.
+1. Run `python3 main.py`.
+2. Upload single or multiple images.
+3. Paint trimaps sequentially for all the uploaded images.
+4. Wait for the processing to complete after which two results would be obtained: a. an image with background removed and b. the alpha matte (Black and White Contour). These would also be saved at `output_dir` and `alpha_matte_dir` respectively, which could be downloaded at <date-time>_output_dir and <date_time>_alpha_matte_dir.
 
 ### Trimap Keybinds:
 1. Q or 1 => Grey Mask (Unknown Region)
