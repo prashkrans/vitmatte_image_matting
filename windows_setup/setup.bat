@@ -22,6 +22,15 @@ if %errorLevel% neq 0 (
 )
 cd vitmatte_using_hf
 
+:: Download the model
+echo Downloading the viTMatte checkpoint model...
+powershell -Command "& {Invoke-WebRequest -Uri 'https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin' -OutFile '.\checkpoints\pytorch_model.bin'}"
+if %errorLevel% neq 0 (
+    echo Failed to download the model.
+    pause
+    exit /b 1
+)
+
 :: Create and activate virtual environment
 echo Creating and activating virtual environment...
 python -m venv env_vitmatte
