@@ -1,4 +1,6 @@
 __pycache__/
+.idea/
+env_vitmatte/
 resources/
 resources_backup/
 checkpoints/pytorch_model.bin

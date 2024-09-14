@@ -21,8 +21,8 @@ https://github.com/user-attachments/assets/f0a024ac-c02c-47a8-b3d4-e952edd077ee
 ### Setup:
 1. Clone the repo and move to the root dir.
 ```commandline
-git clone https://github.com/prashkrans/viTmatte_using_hf.git
-cd viTmatte_using_hf/
+git clone https://github.com/prashkrans/vitmatte_image_matting.git
+cd vitmatte_image_matting/
 ```
 2. Download the `viTMatte base composition 1k model` (~ 400 MBs) from https://huggingface.co/hustvl/vitmatte-base-composition-1k/tree/main and put it in checkpoints directory. This avoids using internet for each run.   
 3. Create a python virtual environment.
