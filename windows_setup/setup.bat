@@ -1,12 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Remove existing vitmatte_using_hf directory if it exists
-if exist vitmatte_using_hf (
-    echo Removing existing vitmatte_using_hf directory...
-    rmdir /s /q vitmatte_using_hf
+:: Remove existing vitmatte_image_matting directory if it exists
+if exist vitmatte_image_matting (
+    echo Removing existing vitmatte_image_matting directory...
+    rmdir /s /q vitmatte_image_matting
     if %errorLevel% neq 0 (
-        echo Failed to remove existing vitmatte_using_hf directory.
+        echo Failed to remove existing vitmatte_image_matting directory.
         pause
         exit /b 1
     )
@@ -14,17 +14,17 @@ if exist vitmatte_using_hf (
 
 :: Clone the repository
 echo Cloning the repository...
-git clone https://github.com/prashkrans/viTmatte_using_hf.git
+git clone https://github.com/prashkrans/vitmatte_image_matting.git
 if %errorLevel% neq 0 (
     echo Failed to clone the repository.
     pause
     exit /b 1
 )
-cd vitmatte_using_hf
+cd vitmatte_image_matting
 
 :: Download the model using curl
 echo Downloading the viTMatte checkpoint model...
-curl -L -o ".\viTmatte_using_hf\checkpoints\pytorch_model.bin" "https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin"
+curl -L -o ".\vitmatte_image_matting\checkpoints\pytorch_model.bin" "https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin"
 if %ERRORLEVEL% neq 0 (
     echo Failed to download the model.
     pause

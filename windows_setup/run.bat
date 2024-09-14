@@ -1,8 +1,8 @@
 @echo off
 setlocal
 
-:: Change directory to viTmatte_using_hf
-cd /d viTmatte_using_hf
+:: Change directory to vitmatte_image_matting
+cd /d vitmatte_image_matting
 
 :: Activate the virtual environment
 call env_vitmatte\Scripts\activate
