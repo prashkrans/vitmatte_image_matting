@@ -44,10 +44,11 @@ pip install -r requirements.txt
 ### Quick setup and usage for Windows:
 1. Install git from https://git-scm.com/download/win
 2. Install python 3.10 from MS Store (not python.org)
-3. Run `setup.bat` inside `C:\Workspace\image_matting\` (Only once). You may change the path but update the same in `run.bat` as well. 
-4. Run `run.bat` and click on upload images to upload single or multiple image(s) | This currently works for the path `C:\Workspace\image_matting\viTmatte_using_hf`
-5. Paint trimap for the image(s)
-6. Wait for procesing until prompted to download the final images without background along with their alpha matte images
+3. Restart 
+4. Run `setup.bat` inside any directory say `C:\Workspace\image_matting\` (Only once). 
+5. Run `run.bat` and click on upload images to upload single or multiple image(s).
+6. Paint trimap for the image(s)
+7. Wait for procesing until prompted to download the final images without background along with their alpha matte images
 
 **Note:** Although critical_resolution of 2048 works, its really slow, so don't increase the value above 1536.
 
