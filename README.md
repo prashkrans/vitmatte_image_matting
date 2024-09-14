@@ -27,14 +27,15 @@ cd vitmatte_image_matting/
 2. Download the `viTMatte base composition 1k model` (~ 400 MBs) from https://huggingface.co/hustvl/vitmatte-base-composition-1k/tree/main and put it in checkpoints directory. This avoids using internet for each run.   
 3. Create a python virtual environment.
 ```commandline
-python3 -m venv env_vitmatte
-source env_vitmatte/bin/activate
+python3 -m venv env_vit
+source env_vit/bin/activate
 ```
 4. Install the requirements (Might take some time).   
 ```
 sudo apt install python3-tk
 pip install -r requirements.txt
 ```
+**Note:** There are no versions mentioned in requirements.txt as it fails to run when python versions are different like 3.10 or 3.11. 
 
 ### Usage:
 1. Run `python3 main.py`.
@@ -51,7 +52,9 @@ pip install -r requirements.txt
 6. Paint trimap for the image(s)
 7. Wait for procesing until prompted to download the final images without background along with their alpha matte images
 
-**Note:** Although critical_resolution of 2048 works, its really slow, so don't increase the value above 1536.
+**Note:**
+- To run `setup.bat` or `run.bat`, double click -> More Info -> Run anyway
+- Although critical_resolution of 2048 works, its really slow, so don't increase the value above 1536.
 
 ### Trimap Keybinds:
 1. Q or 1 => Grey Mask (Unknown Region)

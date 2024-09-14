@@ -33,13 +33,13 @@ if %ERRORLEVEL% neq 0 (
 
 :: Create and activate virtual environment
 echo Creating and activating virtual environment...
-python -m venv env_vitmatte
+python -m venv env_vit
 if %errorLevel% neq 0 (
     echo Failed to create virtual environment.
     pause
     exit /b 1
 )
-call env_vitmatte\Scripts\activate.bat
+call env_vit\Scripts\activate.bat
 
 :: Install requirements
 echo Installing requirements...

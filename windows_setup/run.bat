@@ -5,7 +5,7 @@ setlocal
 cd /d vitmatte_image_matting
 
 :: Activate the virtual environment
-call env_vitmatte\Scripts\activate
+call env_vit\Scripts\activate
 
 :: Run main.py
 echo Starting image matting...

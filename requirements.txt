@@ -1,6 +1,6 @@
-opencv-python==4.10.0.84
-transformers==4.44.0
-torch==2.4.0
-pillow==10.4.0
-huggingface_hub== 0.24.5
-ttkbootstrap==1.10.1
+opencv-python
+transformers
+torch
+pillow
+huggingface_hub
+ttkbootstrap
