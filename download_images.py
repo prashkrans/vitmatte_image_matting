@@ -6,7 +6,7 @@ import shutil
 from datetime import datetime
 
 
-class ModernImageDownloaderApp:
+class ImageDownloader:
     def __init__(self, master):
         self.master = master
         self.master.title("Image Downloader")
@@ -117,5 +117,5 @@ class ModernImageDownloaderApp:
 
 if __name__ == "__main__":
     root = ttk.Window()
-    app = ModernImageDownloaderApp(root)
+    app = ImageDownloader(root)
     root.mainloop()

@@ -2,9 +2,8 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 import shutil
+from tkinter.constants import BOTH, YES
 import ttkbootstrap as ttk
-from ttkbootstrap.constants import *
-
 from utils import input_dir, clear_image_files
 
 class CustomMessagebox(tk.Toplevel):
@@ -27,7 +26,7 @@ class CustomMessagebox(tk.Toplevel):
         self.transient(parent)
         self.wait_window(self)
 
-class ModernImageUploaderApp:
+class ImageUploader:
     def __init__(self, master):
         self.master = master
         self.master.title("Image Uploader")
@@ -64,6 +63,10 @@ class ModernImageUploaderApp:
 
         os.makedirs(input_dir, exist_ok=True)
 
+    def clear_root(self):
+        for widget in self.master.winfo_children():
+            widget.pack_forget()
+
     def upload_images(self):
         file_paths = filedialog.askopenfilenames(
             title="Select images",
@@ -81,11 +84,31 @@ class ModernImageUploaderApp:
                 print(f"Copied: {file_path} to {destination}")
 
             CustomMessagebox(self.master, "Success", f"{num_images} image(s) uploaded successfully!")
-            self.master.destroy()  # Close the window
+            # self.master.destroy()  # Close the window
+            # In tkinter mainloop can only be used once, so can't destroy it instead clear and stop it and hide the window
+            # Then for using download_images, show the window and start the mainloop again
+            self.clear_root()
+            self.master.quit()  # Close the window
+            self.master.withdraw()  # Close the window
         else:
             self.status_label.config(text="No images selected")
 
 if __name__ == "__main__":
     root = ttk.Window()
-    app = ModernImageUploaderApp(root)
+    app = ImageUploader(root)
     root.mainloop()
+
+
+# Refer this: root could be replaced with self.master here
+
+# def start_mainloop():
+#     root.deiconify()  # Show the window
+#     root.mainloop()   # Start the mainloop
+#
+# def stop_mainloop():
+#     root.quit()       # Stop the mainloop
+#     root.withdraw()   # Hide the window
+#
+# def restart_mainloop():
+#     stop_mainloop()   # Stop and hide the window
+#     start_mainloop()  # Restart the mainloop
