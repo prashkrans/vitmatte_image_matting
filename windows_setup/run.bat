@@ -2,7 +2,7 @@
 setlocal
 
 :: Change directory to viTmatte_using_hf
-cd /d "C:\Workspace\image_matting\viTmatte_using_hf"
+cd /d viTmatte_using_hf
 
 :: Activate the virtual environment
 call env_vitmatte\Scripts\activate
@@ -15,6 +15,5 @@ if %errorLevel% neq 0 (
     pause
     exit /b 1
 )
-
 
 endlocal

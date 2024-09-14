@@ -3,3 +3,4 @@ transformers
 torch
 pillow
 huggingface_hub
+ttkbootstrap
