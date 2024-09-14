@@ -1,23 +1,3 @@
-@REM @echo off
-@REM setlocal
-@REM
-@REM :: Change directory to viTmatte_using_hf
-@REM cd /d viTmatte_using_hf
-@REM
-@REM :: Activate the virtual environment
-@REM call env_vitmatte\Scripts\activate
-@REM
-@REM :: Run main.py
-@REM echo Starting image matting...
-@REM python main.py
-@REM if %errorLevel% neq 0 (
-@REM     echo Failed to run main.py.
-@REM     pause
-@REM     exit /b 1
-@REM )
-@REM
-@REM endlocal
-
 @echo off
 setlocal
 
