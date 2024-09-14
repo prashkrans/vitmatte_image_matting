@@ -8,11 +8,20 @@ def generate_alpha_matte(input_dir, descaled_dir, trimap_dir, alpha_matte_dir):
     print('Initiating the process to generate the alpha matte using ViTMatte')
     image_names_with_ext = get_image_names_with_ext_from_folder(input_dir)
 
-    # processor = VitMatteImageProcessor.from_pretrained("hustvl/vitmatte-small-composition-1k")
-    # model = VitMatteForImageMatting.from_pretrained("hustvl/vitmatte-small-composition-1k")
-
+    """
+    # Method 1: Using hugging face requires active internet connection for each run:
+    processor = VitMatteImageProcessor.from_pretrained("hustvl/vitmatte-small-composition-1k")
+    model = VitMatteForImageMatting.from_pretrained("hustvl/vitmatte-small-composition-1k")
+    # or,
     processor = VitMatteImageProcessor.from_pretrained("hustvl/vitmatte-base-composition-1k")
     model = VitMatteForImageMatting.from_pretrained("hustvl/vitmatte-base-composition-1k")
+    """
+
+    # Method 2: Download three files: 1. config.json 2. preprocessor_config.json and 3. pytorch_model.bin
+    # from https://huggingface.co/hustvl/vitmatte-base-composition-1k/tree/main and save it in ./checkpoints folder
+    # This avoids using internet for each run
+    processor = VitMatteImageProcessor.from_pretrained("./checkpoints/")
+    model = VitMatteForImageMatting.from_pretrained("./checkpoints/")
 
     for image_name_with_ext in image_names_with_ext:
         image_name = image_name_with_ext.split('.')[0]

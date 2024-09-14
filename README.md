@@ -14,7 +14,7 @@ https://github.com/user-attachments/assets/f0a024ac-c02c-47a8-b3d4-e952edd077ee
 ### Prerequisites:
 - Python 3.11 (Might work with lower/higher versions as well)
 - Hugging Face Hub
-- tkinter (Only for linux): `sudo apt install python3-tk`
+- Tkinter (Only for linux): `sudo apt install python3-tk`
 - I have not tested for NVIDIA cuda, may be significantly faster.
 - Critical Resolution kept as 1536 (2048 works but is painfully slow and > 2048 gives an error as it requires more RAM)
 
@@ -24,12 +24,13 @@ https://github.com/user-attachments/assets/f0a024ac-c02c-47a8-b3d4-e952edd077ee
 git clone https://github.com/prashkrans/viTmatte_using_hf.git
 cd viTmatte_using_hf/
 ```
-2. Create a python virtual environment.
+2. Download the `viTMatte base composition 1k model` (~ 400 MBs) from https://huggingface.co/hustvl/vitmatte-base-composition-1k/tree/main and put it in checkpoints directory. This avoids using internet for each run.   
+3. Create a python virtual environment.
 ```commandline
-python3 -m venv env_vit
-source env_vit/bin/activate
+python3 -m venv env_vitmatte
+source env_vitmatte/bin/activate
 ```
-3. Install the requirements (Might take some time).   
+4. Install the requirements (Might take some time).   
 ```
 sudo apt install python3-tk
 pip install -r requirements.txt
