@@ -24,7 +24,7 @@ cd vitmatte_image_matting
 
 :: Download the model using curl
 echo Downloading the viTMatte checkpoint model...
-curl -L -o ".\vitmatte_image_matting\checkpoints\pytorch_model.bin" "https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin"
+curl -L -o ".\checkpoints\pytorch_model.bin" "https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin"
 if %ERRORLEVEL% neq 0 (
     echo Failed to download the model.
     pause
