@@ -22,10 +22,10 @@ if %errorLevel% neq 0 (
 )
 cd vitmatte_using_hf
 
-:: Download the model
+:: Download the model using curl
 echo Downloading the viTMatte checkpoint model...
-powershell -Command "& {Invoke-WebRequest -Uri 'https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin' -OutFile '.\checkpoints\pytorch_model.bin'}"
-if %errorLevel% neq 0 (
+curl -L -o ".\viTmatte_using_hf\checkpoints\pytorch_model.bin" "https://huggingface.co/hustvl/vitmatte-base-composition-1k/resolve/main/pytorch_model.bin"
+if %ERRORLEVEL% neq 0 (
     echo Failed to download the model.
     pause
     exit /b 1
