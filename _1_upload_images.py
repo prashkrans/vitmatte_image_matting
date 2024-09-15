@@ -4,7 +4,7 @@ import os
 import shutil
 from tkinter.constants import BOTH, YES
 import ttkbootstrap as ttk
-from utils import input_dir, clear_image_files
+from _utils import input_dir, clear_image_files
 
 class CustomMessagebox(tk.Toplevel):
     def __init__(self, parent, title, message):

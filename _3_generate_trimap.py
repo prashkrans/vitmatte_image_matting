@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
-from utils import get_image_names_with_ext_from_folder
+from _utils import get_image_names_with_ext_from_folder
 from math import ceil
-from descale_image import descale_image
+from _2_descale_image import descale_image
 
 def generate_trimap(input_dir, descaled_dir, trimap_dir):
     print('Starting trimap generating process')

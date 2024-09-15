@@ -2,7 +2,7 @@ import torch
 
 from transformers import VitMatteImageProcessor, VitMatteForImageMatting
 from PIL import Image
-from utils import get_image_names_with_ext_from_folder
+from _utils import get_image_names_with_ext_from_folder
 
 def generate_alpha_matte(input_dir, descaled_dir, trimap_dir, alpha_matte_dir):
     print('Initiating the process to generate the alpha matte using ViTMatte')

@@ -1,10 +1,10 @@
 import ttkbootstrap as ttk
-from generate_trimap import generate_trimap
-from generate_alpha_matte import generate_alpha_matte
-from crop_using_alpha_matte import create_cropped_image
-from utils import input_dir, output_dir, trimap_dir, descaled_dir, alpha_matte_dir, clear_image_files
-from upload_images import ImageUploader
-from download_images import ImageDownloader
+from _1_upload_images import ImageUploader
+from _3_generate_trimap import generate_trimap
+from _4_generate_alpha_matte import generate_alpha_matte
+from _5_crop_using_alpha_matte import create_cropped_image
+from _utils import input_dir, output_dir, trimap_dir, descaled_dir, alpha_matte_dir, clear_image_files
+from _6_download_images import ImageDownloader
 
 def process_images():
     generate_trimap(input_dir, descaled_dir, trimap_dir)

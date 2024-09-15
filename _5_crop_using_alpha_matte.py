@@ -1,5 +1,5 @@
 from PIL import Image
-from utils import get_image_names_with_ext_from_folder
+from _utils import get_image_names_with_ext_from_folder
 
 def create_cropped_image(input_dir, descaled_dir, alpha_matte_dir, output_dir):
     print('Initiating the cropping process using the generated alpha matte')
