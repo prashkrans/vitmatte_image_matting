@@ -13,7 +13,6 @@ https://github.com/user-attachments/assets/f0a024ac-c02c-47a8-b3d4-e952edd077ee
 
 ### Prerequisites:
 - Python 3.11 (Might work with lower/higher versions as well)
-- Hugging Face Hub
 - Tkinter (Only for linux): `sudo apt install python3-tk`
 - I have not tested for NVIDIA cuda, may be significantly faster.
 - Critical Resolution kept as 1536 (2048 works but is painfully slow and > 2048 gives an error as it requires more RAM)
@@ -66,7 +65,7 @@ pip install -r requirements.txt
 
 ### Note:
 - Descale option is used to avoid `CUDA OOM`.
-- Dev Options: Feel free to play with `critical_pixel = 1024` in line 12 of `descale_image.py` to have larger image resolution as output or use an upscaler.
+- Dev Options: Feel free to play with `critical_pixel = 1536` in line 8 of `_2_descale_image.py` to have larger image resolution as output if having > 16GBs of GPU VRAM or use an upscaler.
 - Currently, it doesn't support undo, so if the trimap gets messed up, you'd have to start over by pressing the `Esc` key.
 - There are two ways to use VitMatte:
   1. ViTMatte from hugging faces | Tested, works really great 
