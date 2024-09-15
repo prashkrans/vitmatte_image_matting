@@ -15,6 +15,7 @@ def generate_alpha_matte(input_dir, descaled_dir, trimap_dir, alpha_matte_dir):
     # or,
     processor = VitMatteImageProcessor.from_pretrained("hustvl/vitmatte-base-composition-1k")
     model = VitMatteForImageMatting.from_pretrained("hustvl/vitmatte-base-composition-1k")
+    Note - It requires hugging face hub i.e. pip install huggingface_hub
     """
 
     # Method 2: Download three files: 1. config.json 2. preprocessor_config.json and 3. pytorch_model.bin

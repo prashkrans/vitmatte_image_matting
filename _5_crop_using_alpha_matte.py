@@ -11,7 +11,7 @@ def create_cropped_image(input_dir, descaled_dir, alpha_matte_dir, output_dir):
         alpha_matte_name = f'{image_name}_alpha.png'
         output_name = f'{image_name}_output.png'
 
-        image_path = f'{input_dir}{image_name_with_ext}'
+        # image_path = f'{input_dir}{image_name_with_ext}'
         descaled_img_path = f'{descaled_dir}/{descaled_img_name}'
         alpha_matte_path = f'{alpha_matte_dir}/{alpha_matte_name}'
         output_path = f'{output_dir}/{output_name}'
